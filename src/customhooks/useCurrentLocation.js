@@ -23,7 +23,6 @@ const useCurrentLocation = (dispatch, addLocation) => {
 
         window?.location.reload();
     }
-
     const error = (err) => {
         console.warn(`ERROR-(${err.code}): ${err.message}`);
     }
@@ -32,4 +31,4 @@ const useCurrentLocation = (dispatch, addLocation) => {
         : alert("Unable to fetch your Location")
 }
 
-export default useCurrentLocation;
+export default useCurrentLocation
