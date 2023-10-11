@@ -20,7 +20,6 @@ const useCurrentLocation = (dispatch, addLocation) => {
                 address: data?.display_name,
             })
         );
-
         window?.location.reload();
     }
     const error = (err) => {
