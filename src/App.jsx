@@ -11,6 +11,7 @@ import { selectLocationState } from "./utilities/AppSlice";
 import store from "./utilities/store";
 
 import Demo  from "./components/Demo";
+import MobileHeader from "./components/mobileHeader";
 
 function App() {
 
@@ -30,7 +31,8 @@ function App() {
       </BrowserRouter> */}
       {/* <LandingPage/> */}
       <Header/>
-      <Demo/>
+      {/* <Demo/> */}
+      <MobileHeader/>
       <Footer/>
     </>
   );
