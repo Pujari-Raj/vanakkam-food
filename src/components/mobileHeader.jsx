@@ -10,8 +10,12 @@ import {
   ChevronDown,
   Search,
 } from "lucide-react";
+import { useSelector } from "react-redux";
+import { selectLocationState } from "../utilities/AppSlice";
 
-const mobileHeader = () => {
+const mobileHeader = ({ toggle, toggleTwo }) => {
+  const location = useSelector(selectLocationState);
+
   return (
     <>
       <header
@@ -19,16 +23,14 @@ const mobileHeader = () => {
         id="shortHeader"
       >
         <div className="flex h-full items-center justify-between px-4 py-2">
-          <div className="flex flex-col" onClick="">
+          <div className="flex flex-col" onClick={toggle}>
             <div className="flex items-center text-xl font-bold text-defBlack group-hover:text-defColor">
               <MapPin className="mr-1 text-2xl" />
-              {/* <span>{location?.city}</span> */}
-              <span>Mumbai</span>
+              <span>{location?.city}</span>
             </div>
             <div className="flex items-center">
               <span className="textEllipse w-full overflow-hidden text-ellipsis break-words text-defGray">
-                {/* {location?.address} */}
-                Lorem ipsum dolor sit amet.
+                {location?.address}
               </span>
               <ChevronDown className="mr-4 text-2xl text-defColor" />
             </div>
@@ -80,7 +82,7 @@ const mobileHeader = () => {
               </div>
             )}
           </NavLink>
-          <NavLink onClick="" className="group w-full py-2">
+          <NavLink onClick={toggleTwo} className="group w-full py-2">
             <div className="flex flex-col items-center gap-y-[1px] group-hover:text-defBlack">
               <User
                 className={"h-5 w-5 fill-defGray group-hover:fill-defBlack"}
