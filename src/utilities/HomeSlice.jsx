@@ -7,6 +7,7 @@ import {
 const initialState = {
   cards: { carouselCards: [], categoryCards: [], status: "idle" },
   restCards: [],
+  restaurantchainCards:[],
   status: "idle",
   error: null,
   page: Number(10),
@@ -49,6 +50,7 @@ export const fetchMoreData = createAsyncThunk(
       }),
     });
     const data = await response.json();
+    console.log(data);
     return data;
   }
 );
@@ -80,6 +82,10 @@ const HomeSlice = createSlice({
                     state.cards.categoryCards = 
                     item?.card?.card?.imageGridCards?.info ||
                     item?.card?.card?.gridElements?.infoWithStyle?.info;
+                }
+                if (item?.card?.card?.id === "top_brands_for_you") {
+                  state.restaurantchainCards =
+                  item?.card?.card?.gridElements?.infoWithStyle?.restaurants
                 }
                 if (item?.card?.card?.id === "restaurant_grid_listing") {
                     state.restCards = 
@@ -118,6 +124,7 @@ const HomeSlice = createSlice({
     }
 });
 
+export const selectRestChainCards = (state) => state.HomeData?.restaurantchainCards;
 export const selectCarouselData = (state) => state.HomeData?.cards;
 export const selectRestCards = (state) => state.HomeData?.restCards;
 export const selectHomeStatus = (state) => state.HomeData?.status;
