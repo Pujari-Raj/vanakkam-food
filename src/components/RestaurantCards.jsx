@@ -5,7 +5,7 @@ import { DATA_CARD_IMG_URL } from "../constants/constants";
 const RestaurantCards = ({item}) => {
   return (
     <>
-    <div className="flex h-full w-full grid-flow-row justify-stretch duration-100 sm:grid sm:hover:scale-95">
+    <div className="flex h-full w-full grid-flow-row justify-stretch sm:grid shadow-[0_2.8rem_2.8rem_rgba(0,0,0,0.075)] rounded-2xl mb-8 transition duration-300 ease-in-out hover:scale-y-105">
       <div className="relative">
         <div className="h-28 w-28 sm:h-full sm:w-full">
           <img
@@ -32,10 +32,10 @@ const RestaurantCards = ({item}) => {
         <div className="textEllipse w-full overflow-hidden text-ellipsis break-words text-xl font-medium tracking-tight text-[#02060cbf]">
           {item?.info?.name}
         </div>
-        <div className="flex items-center gap-x-1 text-base font-semibold">
+        <div className="flex items-center text-base font-semibold">
           <span className="text-xl text-green-600">
             {/* <MdStars /> */}
-            <Star/>
+            <Star color="white" fill="white" className='h-[1.4rem] w-[1.4rem] bg-green-400 rounded-xl p-[4px] mr-2'/>
           </span>
           <span className="text-base text-[#02060cbf]">
             {item?.info?.avgRatingString}
