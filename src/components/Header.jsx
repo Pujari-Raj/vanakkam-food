@@ -23,7 +23,7 @@ const Header = (props) => {
 
   return (
     <>
-      <nav className="w-full shadow-[rgba(0,_0,_0,_0.24)_0px_1px_8px] hidden md:block">
+      <nav className="w-full shadow-[rgba(0,_0,_0,_0.24)_0px_1px_8px] hidden md:block" id="header">
         <div className="w-full mx-auto px-2 sm:px-6 lg:px-8 py-2">
           <div className="flex items-center  h-16 w-full">
             <div className="flex-1 flex items-center justify-between">
