@@ -46,7 +46,7 @@ const HomePage = () => {
   return (
     <>
       <div className="mx-auto w-full max-w-[1200px]">
-        {/* <Carousel /> */}
+        <Carousel />
         <div className="px-4 w-full">
           <div className="flex justify-between">
             <h1 className="text-2xl font-bold text-black">

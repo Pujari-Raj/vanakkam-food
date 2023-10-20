@@ -1,40 +1,35 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Offers from "./pages/Offers";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Body from "./components/Body";
 import LandingPage from "./components/LandingPage";
-import useCurrentLocation from "./customhooks/useCurrentLocation";
+import HomePage from "./pages/HomePage";
 import { useSelector } from "react-redux";
 import { selectLocationState } from "./utilities/AppSlice";
 import store from "./utilities/store";
-
-import Demo  from "./components/Demo";
-import MobileHeader from "./components/mobileHeader";
+import { fetchData } from "./utilities/HomeSlice";
+import Help from "./pages/Help";
+import RestaurantPage from "./components/RestaurantPage";
 
 function App() {
 
-  // const userLocation = useSelector(selectLocationState);
-  // store.dispatch(
-    
-  // );
+  const userLocation = useSelector(selectLocationState);
+  store.dispatch(
+    fetchData({ lat: userLocation?.lat, long: userLocation?.long }),
+  );
 
   return (
-    <>
-      {/* <BrowserRouter>
-        <Header />
-          <Body/>
-        <Footer />
-        <Routes>
-          </Routes>
-      </BrowserRouter> */}
-      {/* <LandingPage/> */}
-      <Header/>
-      {/* <Demo/> */}
-      <MobileHeader/>
-      <Footer/>
-    </>
+    <Routes>
+      {userLocation? (
+        <Route path="/" element={<Body/>}>
+          <Route index path="/" element={<HomePage/>} />
+          <Route path="restaurant">
+            <Route index path=":resId" element={<RestaurantPage/>} />
+          </Route>
+        </Route>
+      ): (
+        <Route index path="/" element={<LandingPage/>} />
+      )}
+    </Routes>
   );
 }
 
