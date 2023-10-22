@@ -22,7 +22,6 @@ const VegSection = ({ data, isVeg, setIsVeg }) => {
 };
 
 // ToppicksMenu
-
 const TopPicksMenu = ({ data }) => {
   return (
     <div className="border-b-8 border-b-[#f1f1f6] pb-8">
