@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import { selectLocationState } from "./utilities/AppSlice";
 import store from "./utilities/store";
 import { fetchData } from "./utilities/HomeSlice";
-import Help from "./pages/Help";
 import RestaurantPage from "./components/RestaurantPage";
 import RestaurantSearch from "./components/RestaurantSearch";
 import SearchFood from "./components/SearchFood";
