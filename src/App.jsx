@@ -9,6 +9,8 @@ import store from "./utilities/store";
 import { fetchData } from "./utilities/HomeSlice";
 import Help from "./pages/Help";
 import RestaurantPage from "./components/RestaurantPage";
+import RestaurantSearch from "./components/RestaurantSearch";
+import SearchFood from "./components/SearchFood";
 
 function App() {
 
@@ -24,7 +26,9 @@ function App() {
           <Route index path="/" element={<HomePage/>} />
           <Route path="restaurant">
             <Route index path=":resId" element={<RestaurantPage/>} />
+            <Route path=":resId/search" element={<RestaurantSearch/>} />
           </Route>
+          <Route path="search" element={<SearchFood/>} />
         </Route>
       ): (
         <Route index path="/" element={<LandingPage/>} />
