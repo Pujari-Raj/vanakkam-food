@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, Route, NavLink } from "react-router-dom";
-// import { ROUTES_ARR } from "../constants/routes.constant";
 import {
   PercentCircle,
   User,
@@ -11,6 +10,21 @@ import {
 } from "lucide-react";
 import { useSelector } from "react-redux";
 import { selectLocationState } from "../utilities/AppSlice";
+import { priceItemCalculator } from "../customhooks/useFetchSearchMenu";
+import { selectCartItem, selectRestInfo } from "../utilities/CartSlice";
+
+import {
+  SearchBtn,
+  ProfileBtn,
+  CartBtn,
+  OfferBtn,
+  AboutBtn,
+} from "../assets/SVG";
+import {
+  DEF_IMG_URL,
+  NONVEG_ICON_URL,
+  VEG_ICON_URL,
+} from "../Constants/constants";
 
 const Header = (props) => {
   const location = useSelector(selectLocationState);
@@ -18,6 +32,24 @@ const Header = (props) => {
   const addressparts = address.split(",");
   const area = addressparts.shift();
   const restOfAddress = addressparts.join(',');
+
+  const cartItems = useSelector(selectCartItem);
+  const restInfo = useSelector(selectRestInfo);
+  const { totalCost, totalItems } = priceItemCalculator(cartItems);
+
+  var cartButton = document.getElementById("cartNavBtn");
+  var cartCounter = document.getElementById("cartCounter");
+  if (cartItems?.length != 0) {
+    cartButton?.classList.add("activeSet");
+    cartCounter?.classList.add("cartCountActive");
+  } else if (
+    cartButton?.classList.contains("activeSet") &&
+    cartCounter?.classList.contains("cartCountActive") &&
+    cartItems?.length == 0
+  ) {
+    cartButton?.classList.remove("activeSet");
+    cartCounter?.classList.remove("cartCountActive");
+  }
   
   //
 
@@ -28,13 +60,13 @@ const Header = (props) => {
           <div className="flex items-center  h-16 w-full">
             <div className="flex-1 flex items-center justify-between">
               <div className=" flex items-center">
-                <a href="/">
+                <NavLink to="/">
                   <img
                     className="object-fill w-[13rem]"
                     srcSet="./src/assets/Vanakkam.png"
                     alt="website-logo"
                   />
-                </a>
+                </NavLink>
                 <div
                   className="group flex items-center cursor-pointer gap-x-[3px] tracking-tighter lg:ml-4 lg:gap-x-2"
                   onClick={props.toggle}
@@ -119,9 +151,9 @@ const Header = (props) => {
                     className="flex items-center gap-x-1 md:gap-x-3"
                   >
                     <span className="relative">
-                      <Square
-                        className={
-                          "h-[30px] w-[25px] fill-white stroke-primary stroke-[3px] group-hover:stroke-orangeColor group-hover:fill-white"
+                      <CartBtn
+                        classList={
+                          "h-[30px] w-[25px] fill-white stroke-[#02060cbf] stroke-[3px] group-hover:stroke-orangeColor group-hover:fill-white"
                         }
                         idName={"cartNavBtn"}
                       />
@@ -129,14 +161,13 @@ const Header = (props) => {
                         className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-sm font-semibold group-hover:text-orangeColor"
                         id="cartCounter"
                       >
-                        {/* {totalItems} */}
-                        
+                        {totalItems}
                       </span>
                     </span>
                     <span className="group-hover:text-orangeColor">Cart</span>
                   </NavLink>
                   {/* Cart (hover-func) */}
-                  {/* <div className="cartMenu invisible absolute right-0 top-full z-[1] flex w-auto rounded-sm border-t-2 border-solid border-t-[#fc8019] bg-white px-7 py-6 opacity-0 shadow-[0_2px_20px_0_#93959f]">
+                  <div className="cartMenu invisible absolute right-0 top-full z-[1] flex w-auto rounded-sm border-t-2 border-solid border-t-[#fc8019] bg-white px-7 py-6 opacity-0 shadow-[0_2px_20px_0_#93959f]">
                     <span className="cartArrow"></span>
                     {cartItems?.length == 0 ? (
                       <div className="w-[280px] px-[14px] pb-[14px] pt-[7px]">
@@ -227,7 +258,7 @@ const Header = (props) => {
                         </NavLink>
                       </div>
                     )}
-                  </div> */}
+                  </div>
                 </li>
               </ul>
             </div>
