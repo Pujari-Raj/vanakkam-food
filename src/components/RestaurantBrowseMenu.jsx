@@ -28,6 +28,7 @@ const RestaurantBrowseMenu = ({ data }) => {
 
   const [menuNavState, setMenuNavState] = useState(false);
   const menuNavToggleClickHandler = () => {
+    console.log('Browse Menu clicked');
     setMenuNavState(!menuNavState);
   };
 

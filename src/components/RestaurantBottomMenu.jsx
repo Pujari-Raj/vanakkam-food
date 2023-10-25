@@ -12,6 +12,7 @@ const RestaurantBottomMenu = ({ data, open, toggle }) => {
   }
 
   var allRestaurants = [];
+
   data?.map((items) => {
     if (items?.card?.card?.title) {
       allRestaurants.push({
@@ -33,6 +34,7 @@ const RestaurantBottomMenu = ({ data, open, toggle }) => {
                 className="menuNavItems"
                 key={restaurant.title}
                 onClick={() => {
+                  console.log('single menu clicked');
                   document.getElementById(restaurant.title).scrollIntoView({
                     behavior: "smooth",
                   });
