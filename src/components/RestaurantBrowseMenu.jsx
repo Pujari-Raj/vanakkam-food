@@ -40,7 +40,7 @@ const RestaurantBrowseMenu = ({ data }) => {
               className="restMenuBtn"
               onClick={() => menuNavToggleClickHandler()}
             >
-              <Utensils className="mr-1 text-xs text-white" />
+              <Utensils className="mr-4 h-[19px] w-[19px]  text-white" />
               Browse Menu
             </div>
           </div>
