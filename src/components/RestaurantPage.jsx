@@ -6,6 +6,8 @@ import useFetchRestMenu from "../customhooks/useFetchRestMenu";
 import RestaurantInfo from "./RestaurantInfo";
 import RestaurantMenu from "./RestaurantMenu";
 import RestaurantPageShimmer from "./RestaurantPageShimmer";
+import RestaurantBrowseMenu from "./RestaurantBrowseMenu";
+import CartModal from "./CartModal";
 
 const RestaurantPage = () => {
   const { resId } = useParams();
@@ -53,9 +55,11 @@ const RestaurantPage = () => {
               delFees: data?.info?.feeDetails?.totalFee,
             }}
           />
-          {/*  restaurnatbotoom section left to add */}
+          {/*  restaurantbotoom section  */}
+          <RestaurantBrowseMenu data={data?.restList}/>
         </div>
       </div>
+      <CartModal/>
     </>
   ) : (
     <>

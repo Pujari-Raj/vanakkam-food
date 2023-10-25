@@ -239,8 +239,7 @@ const HomePage = () => {
           <div className="my-10 flex justify-center">
             {page <= 200 && (
               <button
-                className="text-md h-12 w-max rounded border-2 border-grayColor px-12 text-center font-bold hover:bg-orangeColor hover:text-white
-                hover:border-none duration-75"
+              className="mt-8  text-center uppercase h-10 w-auto rounded px-[20px] py-[8px] font-bold bg-orangeColor text-white hover:text-gray-600 hover:bg-transparent hover:border-grayColor hover:border-2 duration-75"
                 onClick={() => {
                   dispatch(updatePage());
                   dispatch(

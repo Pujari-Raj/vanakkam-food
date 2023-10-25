@@ -1,8 +1,20 @@
-import React from "react";
+import React,{useMemo} from "react";
 import { IndianRupee } from "lucide-react";
+import { useSelector, useDispatch } from "react-redux";
+
 import { VEG_ICON_URL, NONVEG_ICON_URL, DEF_IMG_URL } from "../constants/constants";
+import { addItem, removeItem, selectCartItem } from "../utilities/CartSlice";
 
 const MenuItemBox = ({ data, restInfo }) => {
+
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItem);
+  const currentItem = useMemo(
+    () => cartItems.find((item) => item.id == data?.info?.id),
+    [cartItems],
+  );
+
+
   return (
     <div className="mx-0 my-5 flex justify-between border-b-[0.5px] border-b-[#d3d3d3] px-0 pb-5 pt-0">
       <div className="md:w-[80%]">
@@ -35,15 +47,14 @@ const MenuItemBox = ({ data, restInfo }) => {
             src={DEF_IMG_URL + data?.info?.imageId}
           />
         )}
-        {/* {!currentItem ? ( */}
-        {/* Commented-Code for Add-to-Cart  */}
+        {!currentItem ? (
           <div
             className="flex h-9 w-24 cursor-pointer items-center justify-center rounded border border-solid border-[#d4d5d9] bg-white text-[13px] font-semibold text-[#60b246] shadow-[0_3px_8px_#e9e9eb]"
-            // onClick={() => dispatch(addItem(data?.info, restInfo))}
+            onClick={() => dispatch(addItem(data?.info, restInfo))}
           >
             ADD
           </div>
-        {/* ) : (
+        ) : (
           <div className="flex h-9 w-24 cursor-pointer items-center justify-around rounded border border-solid border-[#d4d5d9] bg-white  text-sm text-[#60b246] shadow-[0_3px_8px_#e9e9eb]">
             <span
               className="text-[18px] text-[#bebfc5]"
@@ -59,7 +70,7 @@ const MenuItemBox = ({ data, restInfo }) => {
               +
             </span>
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );
