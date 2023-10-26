@@ -24,7 +24,7 @@ import {
   DEF_IMG_URL,
   NONVEG_ICON_URL,
   VEG_ICON_URL,
-} from "../Constants/constants";
+} from "../constants/constants";
 
 const Header = (props) => {
   const location = useSelector(selectLocationState);
@@ -117,7 +117,7 @@ const Header = (props) => {
                     <span className="group-hover:text-orangeColor ">Offers </span>
                   </li>
                 </NavLink>
-                <NavLink to="help">
+                {/* <NavLink to="help">
                   {({ isActive }) => (
                     <li className="group flex items-center gap-x-1 md:gap-x-3">
                       <User
@@ -134,7 +134,7 @@ const Header = (props) => {
                       </span>
                     </li>
                   )}
-                </NavLink>
+                </NavLink> */}
                 <NavLink to="#" onClick={props.toggleTwo}>
                   <li className="group flex items-center gap-x-1 md:gap-x-3">
                     <User

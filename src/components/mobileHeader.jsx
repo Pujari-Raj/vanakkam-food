@@ -11,11 +11,15 @@ import {
   Search,
 } from "lucide-react";
 import { useSelector } from "react-redux";
+import { CartBtn } from "../assets/SVG";
 import { selectLocationState } from "../utilities/AppSlice";
+import { selectCartItem } from "../utilities/CartSlice";
+import { priceItemCalculator } from "../customhooks/useFetchSearchMenu";
 
 const mobileHeader = ({ toggle, toggleTwo }) => {
   const location = useSelector(selectLocationState);
-
+  const cartItems = useSelector(selectCartItem);
+  let {totalItems } = priceItemCalculator(cartItems);
   return (
     <>
       <header
@@ -94,21 +98,20 @@ const mobileHeader = ({ toggle, toggleTwo }) => {
             {({ isActive }) => (
               <div
                 className={`flex flex-col items-center gap-y-[1px]  ${
-              isActive ? "text-orangeColor" : "text-blackColor"
+              isActive ? "text-blackColor" : "text-grayColor"
                 }`}
               >
                 <span className="relative">
-                  <Square
-                    className={`h-5 w-5 stroke-[3px] fill-white ${
-                      isActive ? "text-orangeColor" : "text-blackColor"
+                  <CartBtn
+                    classList={`h-5 w-5 stroke-[3px] fill-white ${
+                      isActive ? "stroke-blackColor" : "stroke-grayColor"
                     }`}
                   />
                   <span
                     className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-sm font-semibold "
                     id="cartCounter"
                   >
-                    {/* {totalItems} */}
-                    0
+                    {totalItems}
                   </span>
                 </span>
                 <span>Cart</span>
