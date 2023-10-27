@@ -25,10 +25,10 @@ const RestaurantPage = () => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     document.getElementById("header").style.position = "inherit";
 
-    // if (mediaQuery.matches) {
-    //   document.getElementById("mobileNav").style.display = "none";
-    //   document.getElementById("shortHeader").style.display = "none";
-    // }
+    if (mediaQuery.matches) {
+      document.getElementById("mobileNav").style.display = "none";
+      document.getElementById("shortHeader").style.display = "none";
+    }
 
     return () => {
       document.getElementById("header").style.position = "sticky";
