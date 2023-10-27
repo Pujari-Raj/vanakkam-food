@@ -10,6 +10,7 @@ export default {
         orangeColor: "#fc8019",
         blackColor: "#282c3f",
         grayColor: "#686b78",
+        greenColor: "#60b246",
       },
     },
   },
