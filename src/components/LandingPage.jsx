@@ -230,7 +230,7 @@ const LandingPage = () => {
           </div>
           <h2 className="text-xl font-semibold">Lightning-Fast Delivery</h2>
           <p className="mt-2 text-sm text-[#e0cbc1]">
-            Experience Swiggy's superfast delivery
+            Experience Vanakkam's superfast delivery
           </p>
           <p className="text-sm text-[#e0cbc1]">
             for food delivered fresh & on time
