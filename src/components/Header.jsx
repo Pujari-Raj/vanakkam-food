@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Link, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   PercentCircle,
   User,
-  HeartHandshake,
   ChevronDown,
   Search,
-  Square,
 } from "lucide-react";
 import { useSelector } from "react-redux";
 import { selectLocationState } from "../utilities/AppSlice";
@@ -14,11 +12,7 @@ import { priceItemCalculator } from "../customhooks/useFetchSearchMenu";
 import { selectCartItem, selectRestInfo } from "../utilities/CartSlice";
 
 import {
-  SearchBtn,
-  ProfileBtn,
   CartBtn,
-  OfferBtn,
-  AboutBtn,
 } from "../assets/SVG";
 import {
   DEF_IMG_URL,
@@ -39,6 +33,7 @@ const Header = (props) => {
 
   var cartButton = document.getElementById("cartNavBtn");
   var cartCounter = document.getElementById("cartCounter");
+  
   if (cartItems?.length != 0) {
     cartButton?.classList.add("activeSet");
     cartCounter?.classList.add("cartCountActive");

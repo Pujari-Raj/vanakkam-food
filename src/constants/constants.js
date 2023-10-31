@@ -17,10 +17,7 @@ export const DATA_CARD_IMG_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 export const FOOTER_LOGO_URL =
   "https://foodsimp.netlify.app/logoFooter.b9007afe.png";
-export const APP_STORE_ICON =
-  "https://foodsimp.netlify.app/appStoreIcon.be7d6e09.png";
-export const PLAY_STORE_ICON =
-  "https://foodsimp.netlify.app/playStoreIcon.8412b4d9.png";
+
 export const DEF_IMG_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 export const VEG_ICON_URL =

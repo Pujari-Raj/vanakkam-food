@@ -25,7 +25,7 @@ const LandingPage = () => {
   const [searchData, setSearchData] = useState([]);
 
   const fetchAddressBySearch = async (placeid) => {
-    const res = await fetch(`${FETCH_ADDRESS_URL}${placeid}}`);
+    const res = await fetch(`${FETCH_ADDRESS_URL}${placeid}`);
     const {data} = await res.json();
     console.log("FETCH_ADDRESS_URL-",data);
     const city = data[0]?.address_components?.filter(
@@ -34,7 +34,7 @@ const LandingPage = () => {
     dispatch(
       addLocation({
         lat: data[0]?.geometry?.location?.lat,
-        long: data[1]?.geometry?.location?.long,
+        long: data[0]?.geometry?.location?.lng,
         city: city[0]?.long_name,
         address: data[0]?.formatted_address,
       })
@@ -123,6 +123,7 @@ const LandingPage = () => {
                       placeholder="Enter your delivery location"
                       ref={searchRef}
                       onChange={() => handleSearch(searchRef.current?.value)}
+                      autoFocus={true}
                     />
                     <button
                       className="absolute right-0 top-[1px] mr-2 flex cursor-pointer items-center gap-x-1 bg-white px-2.5 py-3 font-medium text-[#535665] hover:bg-[#e9e9eb] md:top-2"

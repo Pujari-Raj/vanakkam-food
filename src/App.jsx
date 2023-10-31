@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes,  } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Body from "./components/Body";
 import LandingPage from "./components/LandingPage";
 import HomePage from "./pages/HomePage";
@@ -30,6 +30,7 @@ function App() {
           </Route>
           <Route path="search" element={<SearchFood/>} />
           <Route path="cart" element={<CartPage/>} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       ): (
         <Route index path="/" element={<LandingPage/>} />
