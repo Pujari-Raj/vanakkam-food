@@ -751,3 +751,46 @@ input:checked + .slider:before {
   font-size: 12px;
   margin-top: 3px;
 }
+
+.errorcontainer {
+  position: fixed;
+  bottom: 0;
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  width: 100%;
+  z-index: 10002;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+.errorpopupcontainer {
+  display: table;
+  max-width: 400px;
+  padding: 0;
+  margin: 0 auto;
+  background: #FF3131;
+  pointer-events: auto;
+  color: #fff;
+}
+
+.errorpopupouter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 12px 15px;
+  position: relative;
+  box-shadow: 0 3px 15px 0 rgba(40, 44, 63, 0.3);
+  min-height: 50px;
+}
+
+.errorpopupinner{
+  flex: 1;
+}
+
+.showerror{
+  transform: translateY(-30px) !important;
+  opacity: 1;
+}

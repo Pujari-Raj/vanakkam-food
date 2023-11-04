@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useSelector } from "react-redux";
 import { selectLocationState } from "../utilities/AppSlice";
-import { priceItemCalculator } from "../customhooks/useFetchSearchMenu";
+import { cartItemCalculator } from "../customhooks/useFetchSearchMenu";
 import { selectCartItem, selectRestInfo } from "../utilities/CartSlice";
 
 import {
@@ -29,7 +29,7 @@ const Header = (props) => {
 
   const cartItems = useSelector(selectCartItem);
   const restInfo = useSelector(selectRestInfo);
-  const { totalCost, totalItems } = priceItemCalculator(cartItems);
+  const { totalCost, totalItems } = cartItemCalculator(cartItems);
 
   var cartButton = document.getElementById("cartNavBtn");
   var cartCounter = document.getElementById("cartCounter");

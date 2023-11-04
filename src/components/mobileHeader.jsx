@@ -14,12 +14,12 @@ import { useSelector } from "react-redux";
 import { CartBtn } from "../assets/SVG";
 import { selectLocationState } from "../utilities/AppSlice";
 import { selectCartItem } from "../utilities/CartSlice";
-import { priceItemCalculator } from "../customhooks/useFetchSearchMenu";
+import { cartItemCalculator } from "../customhooks/useFetchSearchMenu";
 
 const mobileHeader = ({ toggle, toggleTwo }) => {
   const location = useSelector(selectLocationState);
   const cartItems = useSelector(selectCartItem);
-  let {totalItems } = priceItemCalculator(cartItems);
+  let {totalItems } = cartItemCalculator(cartItems);
   return (
     <>
       <header

@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import LocationDrawer from "./LocationDrawer";
 import SigninDrawer from "./SigninDrawer";
 import { Outlet } from 'react-router-dom';
-
+import UseCheckOnline from "../customhooks/useCheckOnline";
 
 const Body = () => {
 
@@ -26,6 +26,7 @@ const Body = () => {
       <LocationDrawer open={locationDrawer} toggle={toggleOne}/>
       <SigninDrawer openTwo={signinDrawer} toggleTwo={toggleTwo} />
       <Outlet/>
+      <UseCheckOnline/>
       <Footer/>
     </>
     
