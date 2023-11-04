@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import RestaurantBottomMenu from "./RestaurantBottomMenu";
 import { useSelector } from "react-redux";
 import { selectCartItem } from "../utilities/CartSlice";
-import { priceItemCalculator } from "../customhooks/useFetchSearchMenu";
+import { cartItemCalculator } from "../customhooks/useFetchSearchMenu";
 
 const RestaurantBrowseMenu = ({ data }) => {
   const cartItems = useSelector(selectCartItem);
 
-  let { totalCost, totalItems } = priceItemCalculator(cartItems);
+  let { totalCost, totalItems } = cartItemCalculator(cartItems);
 
   var cartBottomMenu = document.getElementById("stickyBottomMenu");
 

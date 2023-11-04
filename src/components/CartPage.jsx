@@ -1,5 +1,5 @@
 import React from "react";
-import { priceItemCalculator } from "../customhooks/useFetchSearchMenu";
+import { cartItemCalculator } from "../customhooks/useFetchSearchMenu";
 import {
   DEF_IMG_URL,
   NONVEG_ICON_URL,
@@ -19,7 +19,7 @@ const CartPage = () => {
   const cartItems = useSelector(selectCartItem);
   const restDetails = useSelector(selectRestInfo);
 
-  let { totalCost } = priceItemCalculator(cartItems);
+  let { totalCost } = cartItemCalculator(cartItems);
 
   function deliveryFunction() {
     var checkBox = document.getElementById("myCheck");

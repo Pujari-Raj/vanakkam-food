@@ -13,7 +13,7 @@ const filterItems = (data) => {
     return filterData;
   };
   
-  const priceItemCalculator = (cartItems) => {
+  const cartItemCalculator = (cartItems) => {
     let totalItems = 0,
       totalCost = 0;
     cartItems.map((item) => {
@@ -28,4 +28,4 @@ const filterItems = (data) => {
     return { totalCost, totalItems };
   };
   
-  export { filterItems, priceItemCalculator };
+  export { filterItems, cartItemCalculator };
