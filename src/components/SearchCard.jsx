@@ -4,6 +4,7 @@ import { DEF_IMG_URL } from "../constants/constants";
 
 const SearchCard = ({ data }) => {
   let resId = "";
+  // console.log("search-data=>"+data);
 
   return (
     <div>

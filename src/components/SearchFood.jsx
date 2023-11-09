@@ -16,6 +16,7 @@ const SearchFood = () => {
     const timer = setTimeout(() => {
       if (searchText.length > 1) {
         useFetchSearchData(searchText, userLocation, setAllRestaurants);
+        // console.log("all rest-"+allRestaurants[0]?.text);
       }
     }, 300);
 
