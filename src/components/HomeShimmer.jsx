@@ -12,13 +12,7 @@ const HomeShimmer = () => {
           <p className=" items-center text-lg line-clamp-2 font-bold"></p>
 
           <div className="mt-4">
-            {/* {cuisines.slice(0, 3).map((cusine) => {
-              return (
-                <span className="mb-2 mr-2 inline-block rounded-full  bg-gray-300 px-3 py-1 text-[10px] font-bold text-gray-900">
-                  {cusine}
-                </span>
-              );
-            })} */}
+            
             <br />
             <span className="flex items-center"> </span>
             <span className="mb-2 mr-2 inline-block rounded-full bg-red-500 px-3 py-1 text-[10px] font-bold text-white"></span>
@@ -36,13 +30,7 @@ const HomeShimmer = () => {
           <p className=" items-center text-lg line-clamp-2 font-bold"></p>
 
           <div className="mt-4">
-            {/* {cuisines.slice(0, 3).map((cusine) => {
-              return (
-                <span className="mb-2 mr-2 inline-block rounded-full  bg-gray-300 px-3 py-1 text-[10px] font-bold text-gray-900">
-                  {cusine}
-                </span>
-              );
-            })} */}
+
             <br />
             <span className="flex items-center"> </span>
             <span className="mb-2 mr-2 inline-block rounded-full bg-red-500 px-3 py-1 text-[10px] font-bold text-white"></span>
@@ -60,13 +48,6 @@ const HomeShimmer = () => {
           <p className=" items-center text-lg line-clamp-2 font-bold"></p>
 
           <div className="mt-4">
-            {/* {cuisines.slice(0, 3).map((cusine) => {
-              return (
-                <span className="mb-2 mr-2 inline-block rounded-full  bg-gray-300 px-3 py-1 text-[10px] font-bold text-gray-900">
-                  {cusine}
-                </span>
-              );
-            })} */}
             <br />
             <span className="flex items-center"> </span>
             <span className="mb-2 mr-2 inline-block rounded-full bg-red-500 px-3 py-1 text-[10px] font-bold text-white"></span>
@@ -84,13 +65,6 @@ const HomeShimmer = () => {
           <p className=" items-center text-lg line-clamp-2 font-bold"></p>
 
           <div className="mt-4">
-            {/* {cuisines.slice(0, 3).map((cusine) => {
-              return (
-                <span className="mb-2 mr-2 inline-block rounded-full  bg-gray-300 px-3 py-1 text-[10px] font-bold text-gray-900">
-                  {cusine}
-                </span>
-              );
-            })} */}
             <br />
             <span className="flex items-center"> </span>
             <span className="mb-2 mr-2 inline-block rounded-full bg-red-500 px-3 py-1 text-[10px] font-bold text-white"></span>
