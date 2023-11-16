@@ -42,7 +42,8 @@ const mobileHeader = ({ toggle, toggleTwo }) => {
           <NavLink to="/">
             <img
               className="object-fill w-[13rem]"
-              srcSet="./src/assets/Vanakkam.png"
+              // srcSet="./src/assets/Vanakkam.png"
+              src="./src/assets/Vanakkam.png"
               alt="website-logo"
             />
           </NavLink>
