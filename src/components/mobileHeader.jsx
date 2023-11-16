@@ -11,7 +11,8 @@ import {
   Search,
 } from "lucide-react";
 import { useSelector } from "react-redux";
-import { CartBtn } from "../assets/SVG";
+// import { CartBtn } from "../assets/SVG";
+import { CartBtn } from "../constants/SVG";
 import { selectLocationState } from "../utilities/AppSlice";
 import { selectCartItem } from "../utilities/CartSlice";
 import { cartItemCalculator } from "../customhooks/useFetchSearchMenu";

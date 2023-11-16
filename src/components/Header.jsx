@@ -11,14 +11,14 @@ import { selectLocationState } from "../utilities/AppSlice";
 import { cartItemCalculator } from "../customhooks/useFetchSearchMenu";
 import { selectCartItem, selectRestInfo } from "../utilities/CartSlice";
 
-import {
-  CartBtn,
-} from "../assets/SVG";
+import { CartBtn } from "../constants/SVG";
 import {
   DEF_IMG_URL,
   NONVEG_ICON_URL,
   VEG_ICON_URL,
 } from "../constants/constants";
+
+// import images
 
 const Header = (props) => {
   const location = useSelector(selectLocationState);
@@ -59,7 +59,8 @@ const Header = (props) => {
                   <img
                     className="object-fill w-[13rem]"
                     // srcSet="./src/assets/Vanakkam.png"
-                    src={"./src/assets/Vanakkam.png"}
+                    // src={"./src/assets/Vanakkam.png"}
+                    src="../../public/assets/Vanakkam.png"
                     alt="website-logo"
                   />
                 </NavLink>

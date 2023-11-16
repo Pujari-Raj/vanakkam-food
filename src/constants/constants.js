@@ -50,3 +50,4 @@ export const ADDRESS_SUGG_URL = `${PROXY_URL}https://www.swiggy.com/dapi/misc/pl
 export const SEARCH_REST_URL = `${PROXY_URL}https://www.swiggy.com/dapi/restaurants/search/suggest?`;
 export const FETCH_HOME_DATA_URL = `${PROXY_URL}https://www.swiggy.com/dapi/restaurants/list/v5?`;
 export const FETCH_MORE_DATA_URL = `${PROXY_URL}https://www.swiggy.com/dapi/restaurants/list/update`;
+
