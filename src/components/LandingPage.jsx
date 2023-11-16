@@ -84,7 +84,7 @@ const LandingPage = () => {
           <div className="flex gap-0 md:gap-[13rem]  items-center ">
             <div className="">
               <img
-                src="../src/assets/Vanakkam.png"
+                src={"../src/assets/Vanakkam.png"}
                 className="w-[15rem] h-auto"
                 alt="web-logo"
                 srcset=""
@@ -189,7 +189,7 @@ const LandingPage = () => {
         <div className="text-center">
           <div className="">
             <img
-              src="src/assets/banner.png"
+              src={"src/assets/banner.png"}
               className="w-[12rem] h-auto"
               alt="web-logo"
               srcset=""
@@ -206,7 +206,7 @@ const LandingPage = () => {
         <div className="text-center">
           <div className="">
             <img
-              src="src/assets/mid-banner1.png"
+              src={"src/assets/mid-banner1.png"}
               className="w-[15rem] h-auto"
               alt="web-logo"
               srcset=""
@@ -223,7 +223,7 @@ const LandingPage = () => {
         <div className="text-center">
           <div className="">
             <img
-              src="src/assets/mid-banner2.png"
+              src={"src/assets/mid-banner2.png"}
               className="w-[15rem] h-auto"
               alt="web-logo"
               srcset=""
