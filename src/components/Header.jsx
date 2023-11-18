@@ -60,7 +60,7 @@ const Header = (props) => {
                     className="object-fill w-[13rem]"
                     // srcSet="./src/assets/Vanakkam.png"
                     // src={"./src/assets/Vanakkam.png"}
-                    src="../../public/assets/Vanakkam.png"
+                    src="/assets/Vanakkam.png"
                     alt="website-logo"
                   />
                 </NavLink>

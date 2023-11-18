@@ -84,11 +84,9 @@ const LandingPage = () => {
           <div className="flex gap-0 md:gap-[13rem]  items-center ">
             <div className="">
               <img
-                // src={"../src/assets/Vanakkam.png"}
-                src="../../public/assets/Vanakkam.png"
+                src="/assets/Vanakkam.png"
                 className="w-[15rem] h-auto"
                 alt="web-logo"
-                srcset=""
               />
             </div>
             <div className="hidden md:flex  gap-4">
@@ -181,7 +179,7 @@ const LandingPage = () => {
         {/* right-content */}
         <div
           className="absolute bg-no-repeat h-full bg-cover bg-[100%] bg-[hsla(26,5%,70%,0.2)] left-[calc(50%_+_80px)] right-0 top-0
-          bg-[url('../../public/assets/main-banner.webp')] 
+          bg-[url('/assets/main-banner.webp')] 
           w-0 md:w-[0%] lg:w-[42%] xl:w-[43.6%]"
         ></div>
       </section>
@@ -190,8 +188,7 @@ const LandingPage = () => {
         <div className="text-center">
           <div className="">
             <img
-              // src={"src/assets/banner.png"}
-              src="../../public/assets/banner.png"
+              src="/assets/banner.png"
               className="w-[12rem] h-auto"
               alt="web-logo"
               srcset=""
@@ -208,8 +205,7 @@ const LandingPage = () => {
         <div className="text-center">
           <div className="">
             <img
-              // src={"src/assets/mid-banner1.png"}
-              src="../../public/assets/mid-banner1.png"
+              src="/assets/mid-banner1.png"
               className="w-[15rem] h-auto"
               alt="web-logo"
               srcset=""
@@ -226,8 +222,7 @@ const LandingPage = () => {
         <div className="text-center">
           <div className="">
             <img
-              // src={"src/assets/mid-banner2.png"}
-              src="../../public/assets/mid-banner2.png"
+              src="/assets/mid-banner2.png"
               className="w-[15rem] h-auto"
               alt="web-logo"
               srcset=""
