@@ -65,10 +65,10 @@ const Header = (props) => {
                   />
                 </NavLink>
                 <div
-                  className="group flex items-center cursor-pointer gap-x-[3px] tracking-tighter lg:ml-4 lg:gap-x-2"
+                  className="group flex items-center cursor-pointer gap-x-[3px]  lg:ml-4 lg:gap-x-2"
                   onClick={props.toggle}
                 >
-                  <span className="text-lg mt-[0.15rem] font-extrabold text-blackColor group-hover:text-orangeColor underline">
+                  <span className="text-lg mt-[0.15rem] font-extrabold text-blackColor group-hover:text-orangeColor underline w-[10rem]">
                     {/* {location?.city} */}
                     {area}
                   </span>
@@ -104,7 +104,7 @@ const Header = (props) => {
                     </li>
                   )}
                 </NavLink>
-                <NavLink>
+                {/* <NavLink>
                   <li className="group flex items-center gap-x-1 md:gap-x-3">
                     <PercentCircle
                       className={
@@ -113,7 +113,7 @@ const Header = (props) => {
                     />
                     <span className="group-hover:text-orangeColor ">Offers </span>
                   </li>
-                </NavLink>
+                </NavLink> */}
                 {/* <NavLink to="help">
                   {({ isActive }) => (
                     <li className="group flex items-center gap-x-1 md:gap-x-3">

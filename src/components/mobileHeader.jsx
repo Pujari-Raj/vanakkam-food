@@ -65,7 +65,7 @@ const mobileHeader = ({ toggle, toggleTwo }) => {
                 
                 <img
               className="object-cover w-[1.5rem]"
-              srcSet="./src/assets/mobile-banner.png"
+              src="/assets/mobile-banner.png"
               alt="website-logo"
             />
                 Home
@@ -110,13 +110,13 @@ const mobileHeader = ({ toggle, toggleTwo }) => {
                     }`}
                   />
                   <span
-                    className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-sm font-semibold "
+                    className="absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-sm font-semibold group-hover:text-orangeColor"
                     id="cartCounter"
                   >
                     {totalItems}
                   </span>
                 </span>
-                <span>Cart</span>
+                <span className="group-hover:text-orangeColor">Cart</span>
               </div>
             )}
           </NavLink>
