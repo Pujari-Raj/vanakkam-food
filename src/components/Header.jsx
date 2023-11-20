@@ -58,8 +58,6 @@ const Header = (props) => {
                 <NavLink to="/">
                   <img
                     className="object-fill w-[13rem]"
-                    // srcSet="./src/assets/Vanakkam.png"
-                    // src={"./src/assets/Vanakkam.png"}
                     src="/assets/Vanakkam.png"
                     alt="website-logo"
                   />
@@ -69,14 +67,12 @@ const Header = (props) => {
                   onClick={props.toggle}
                 >
                   <span className="text-lg mt-[0.15rem] font-extrabold text-blackColor group-hover:text-orangeColor underline w-[10rem]">
-                    {/* {location?.city} */}
                     {area}
                   </span>
                   <span className="hidden md:contents">
                     <span className="textEllipse w-[8rem] overflow-hidden text-ellipsis break-words text-gray-500 text-[0.98rem]
                     lg:w-full lg:max-w-[16rem]">
                     {restOfAddress}
-                    {/* {location?.address} */}
                     </span>
                   </span>
                   <span className="text-2xl text-orangeColor">

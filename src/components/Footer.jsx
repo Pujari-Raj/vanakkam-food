@@ -10,7 +10,6 @@ const Footer = () => {
               <a className="">
                 <img
                   className="object-cover w-[14rem] h-16"
-                  // srcSet="./src/assets/Vanakkam-footer.png"
                   src="/assets/Vanakkam-footer.png"
                   alt="website-logo"
                 />

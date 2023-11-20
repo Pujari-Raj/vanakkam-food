@@ -1,6 +1,6 @@
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="./src/assets/Vanakkam.png" alt="logo" width="200"  height="auto" />
+  <img src="./public/assets/Vanakkam.png" alt="logo" width="200"  height="auto" />
   <br/>
 
   <h3><b>Vanakkam Food Ordering App</b></h3>
@@ -67,9 +67,11 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+- Click on the below given link to get the preview.
 
-- [Live Demo Link](https://google.com)
+ <a href="https://spring-flowers-school.vercel.app/">
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
+</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,16 +79,16 @@
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+> 💳Quick and Safe Payments: Soon, ordering food will be even easier with a magic button that lets you pay in a blink, and your account will be guarded by a super-smart lock with passwords and secret handshakes.
 
-- **[Payment Mode Integration]**
-- **[User Authentication]**
-<!-- - **[]** -->
+> 🔐Easy Login with Google: In the future, logging into your favorite app could be a breeze – just one click using your Google account. It's like having a VIP pass to your app world!
+
+<!-- - **[Payment Mode Integration]**
+- **[User Authentication]** -->
+
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+> "If you enjoy this project, I'd greatly appreciate your support. Consider sharing it with others who might find it useful. Your contribution helps me grow and improve. 🚀, Don't Hesitate for starring this GitHub repoistory! "
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
