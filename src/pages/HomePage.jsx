@@ -45,9 +45,9 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[1200px]">
+      <div className=" mx-auto w-full max-w-[1200px]">
         <Carousel />
-        <div className="px-4 w-full">
+        <div className="hidden md:block px-4 w-full">
           <div className="flex justify-between">
             <h1 className="text-2xl font-bold text-black">
               {`Top restaurant chains in ${userLocation?.city}`}
