@@ -123,6 +123,7 @@ const LandingPage = () => {
                       ref={searchRef}
                       onChange={() => handleSearch(searchRef.current?.value)}
                       autoFocus={true}
+                      autoComplete="off"
                     />
                     <button
                       className="absolute right-0 top-[1px] mr-2 flex cursor-pointer items-center gap-x-1 bg-white px-2.5 py-3 font-medium text-[#535665] hover:bg-[#e9e9eb] md:top-2"
