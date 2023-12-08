@@ -69,7 +69,7 @@
 
 - Click on the below given link to get the preview.
 
- <a href="https://spring-flowers-school.vercel.app/">
+ <a href="https://vanakkam-food.vercel.app/">
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 </a>
 
