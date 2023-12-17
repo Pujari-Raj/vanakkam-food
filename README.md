@@ -29,6 +29,9 @@
 
 > VanakkamFood, a React.js-based food ordering app, seamlessly connects users with their favorite dishes through the live Swiggy API. With Redux for state management, React Router DOM for smooth navigation, and Tailwind CSS for a visually appealing interface, it offers a modern and efficient way to explore, order, and enjoy a diverse range of culinary delights.
 
+[comment]: # (Image link that takes to linkedin-post)
+[<img src="./public/assets/main-page.png">](https://www.linkedin.com/feed/update/urn:li:activity:7132738486276608000/)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -69,7 +72,7 @@
 
 - Click on the below given link to get the preview.
 
- <a href="https://vanakkam-food.vercel.app/">
+ <a href="">
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 </a>
 
