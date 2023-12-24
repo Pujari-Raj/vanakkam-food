@@ -44,10 +44,21 @@ export const SEARCH_SHIMMER_SET = [
   "rng/md/carousel/production/0b5ffa32a04d99c1f212d2aacefd5f6f",
 ];
 
-export const FETCH_ADDRESS_URL = `${PROXY_URL}https://www.swiggy.com/dapi/misc/address-recommend?place_id=`;
+const demo = ""
+
+// export const FETCH_ADDRESS_URL = `${PROXY_URL}https://www.swiggy.com/dapi/misc/address-recommend?place_id=`;
+
+export const FETCH_ADDRESS_URL = `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmisc%2Faddress-recommend%3Fplace_id%3D`;
+
 export const REST_MENU_URL = `${PROXY_URL}https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true`;
-export const ADDRESS_SUGG_URL = `${PROXY_URL}https://www.swiggy.com/dapi/misc/place-autocomplete?input=`;
+
+// export const ADDRESS_SUGG_URL = `${PROXY_URL}https://www.swiggy.com/dapi/misc/place-autocomplete?input=`;
+
+export const ADDRESS_SUGG_URL = `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmisc%2Fplace-autocomplete%3Finput%3D`;
+
 export const SEARCH_REST_URL = `${PROXY_URL}https://www.swiggy.com/dapi/restaurants/search/suggest?`;
+
 export const FETCH_HOME_DATA_URL = `${PROXY_URL}https://www.swiggy.com/dapi/restaurants/list/v5?`;
+
 export const FETCH_MORE_DATA_URL = `${PROXY_URL}https://www.swiggy.com/dapi/restaurants/list/update`;
 
