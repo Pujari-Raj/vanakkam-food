@@ -14,6 +14,7 @@ const Accordion = ({ data, isVeg, restInfo }) => {
 
   return (
     <div className="menuAccordion scroll-mt-20 border-b-[16px] border-b-[#f1f1f6] px-0 py-4" id={data?.title}>
+      {/* Accordion div */}
       <div
         className="flex w-full cursor-pointer items-center justify-between text-base font-bold leading-[1.2] text-[#3e4152] transition-all duration-[0.2s]"
         onClick={() => {
@@ -22,7 +23,7 @@ const Accordion = ({ data, isVeg, restInfo }) => {
       >
         {data?.title + " " + "(" + calcLength + ")"}
         <button className="text-2xl">
-          {isVisible ? <ChevronDown /> : <ChevronUp />}
+          {isVisible ? <ChevronUp /> : <ChevronDown />}
         </button>
       </div>
       {isVisible && (
