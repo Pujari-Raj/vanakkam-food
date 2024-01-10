@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import RestaurantCards from "../components/RestaurantCards";
@@ -14,6 +14,7 @@ import {
 } from "../utilities/HomeSlice";
 import { UNAVAIL_LOC_URL } from "../constants/constants";
 import { useDispatch, useSelector } from "react-redux";
+import MoreRestaurantsShimmer from "../components/MoreRestaurantsShimmer";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,37 @@ const HomePage = () => {
   const status = useSelector(selectHomeStatus);
   const page = useSelector(selectPageNum);
   const serviceStatus = useSelector(selectAvailStatus);
-  console.log(restchainCards);
+  // console.log(restaurants.length);
+  // console.log(restchainCards.length);
+
+  const [onlineRestaurants, setOnlineRestaurants] = useState(
+    restchainCards.slice(0, 5)
+  );
+  console.log("onlineRestaurants-length initially- ", onlineRestaurants.length);
+  // console.log("onlineRestaurants->",restchainCards);
+  const [index, setIndex] = useState(5);
+  const [loadingShimmer, setLoadingShimmer] = useState(false);
+
+  const getMoreRestaurants = () => {
+    setLoadingShimmer(true);
+    if (index < restchainCards.length) {
+      setTimeout(() => {
+        var data = restchainCards.slice(index, index + 5);
+        setOnlineRestaurants(onlineRestaurants.concat(data));
+        setIndex(index + 5);
+        setLoadingShimmer(false);
+      }, 2000)
+      // console.log("getMoreRestaurants-data",data);
+    }
+  };
+
+  // console.log(
+  //   "index-length",
+  //   index
+  // );
+  useEffect(() => {
+    setOnlineRestaurants(restchainCards.slice(0, 5));
+  }, [restchainCards]);
 
   if (serviceStatus) {
     return (
@@ -118,7 +149,8 @@ const HomePage = () => {
             className="carouselContainer my-6 py-4 flex gap-8 overflow-x-auto"
             id="slider-3"
           >
-            {restchainCards?.map((item) => {
+            {/* 9-rest  */}
+            {restaurants?.map((item) => {
               return (
                 <Link
                   to={"restaurant/" + item?.info?.id}
@@ -188,13 +220,17 @@ const HomePage = () => {
             className="my-8 grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-x-8 gap-y-4 md:grid-cols-[repeat(3,1fr)] lg:grid-cols-[repeat(4,1fr)]
           "
           >
-            {restaurants?.map((item) => {
+            {/* 20-rest */}
+            {onlineRestaurants?.map((item) => {
               return (
                 <Link to={"restaurant/" + item?.info?.id} key={item?.info?.id}>
                   <RestaurantCards item={item} />
                 </Link>
               );
             })}
+            {loadingShimmer && (
+              <MoreRestaurantsShimmer/>
+            )}
             {status === "loading" && (
               <>
                 <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
@@ -237,23 +273,27 @@ const HomePage = () => {
             )}
           </div>
           <div className="my-10 flex justify-center">
-            {page <= 200 && (
+            {page <= 200 && index <restchainCards.length && (
               <button
-              className="mt-8  text-center uppercase h-10 w-auto rounded px-[20px] py-[8px] font-bold bg-orangeColor text-white hover:text-gray-600 hover:bg-transparent hover:border-grayColor hover:border-2 duration-75"
+                className="mt-8  text-center uppercase h-10 w-auto rounded px-[20px] py-[8px] font-bold bg-orangeColor text-white hover:text-gray-600 hover:bg-transparent hover:border-grayColor hover:border-2 duration-75"
                 onClick={() => {
-                  dispatch(updatePage());
-                  dispatch(
-                    fetchMoreData({
-                      lat: userLocation?.lat,
-                      long: userLocation?.long,
-                      page: page,
-                    })
-                  );
+                  //   dispatch(updatePage());
+                  //   dispatch(
+                  //     fetchMoreData({
+                  //       lat: userLocation?.lat,
+                  //       long: userLocation?.long,
+                  //       page: page,
+                  //     })
+                  //   );
+                  // }
+                  getMoreRestaurants();
                 }}
               >
-                Explore More Restaurants
+                Explore ({restchainCards.length - index}+ more) Restaurants 
               </button>
-            )}
+            )
+            
+            }
           </div>
         </div>
       </div>
