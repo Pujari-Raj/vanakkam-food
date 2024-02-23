@@ -1,5 +1,4 @@
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <img src="./public/assets/Vanakkam.png" alt="logo" width="200"  height="auto" />
   <br/>
 
@@ -8,22 +7,21 @@
 
 <!-- TABLE OF CONTENTS -->
 
-- [📖 About the Project](#about-project)
+## Table of Contents
+
+- [📖 About the Project](#introduction)
   - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
+    - [Tech Stack](#)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Install](#install)
-  - [Deployment](#deployment)
-- [👥 Authors](#authors)
+  - [Installation & Running Instructions](#installation--running-instructions)
 - [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
+- [⭐️ Show your support](#show-your-support)
 
 <!-- PROJECT DESCRIPTION -->
+
+## Introduction
 
 # 🚀 [VanakkamFood] <a name="about-project"></a>
 
@@ -32,15 +30,18 @@
 [comment]: # (Image link that takes to linkedin-post)
 [<img src="./public/assets/main-page.png">](https://www.linkedin.com/feed/update/urn:li:activity:7132738486276608000/)
 
-## 🛠 Built With <a name="built-with"></a>
+## Built With
 
 ### Tech Stack <a name="tech-stack"></a>
 
 * ReactJs
-* Redux
+* Redux Toolkit
 * Tailwind-CSS
 
+
 <!-- Features -->
+
+## key-features
 
 ### 🎯 Key Features <a name="key-features"></a>
 
@@ -68,6 +69,8 @@
 - **[State Management]**
 - **[Shimmer UI]** -->
 
+## Live-demo
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - Click on the below given link to get the preview.
@@ -76,11 +79,34 @@
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 </a>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[⬆️ Back to Top](#table-of-contents)
+
+### Installation & Running Instructions
+
+First step is to “Fork” the project under your name and keep the `main` branch always sync’d with this repository to ensure there are no issues with your Pull Request like those dreaded Merge Conflicts! 😈
+
+1. Clone the Repository (your fork) and make sure it’s in the latest `main` branch.
+2. If you think it might be stale, issue a `git pull` so that it’s up to date.
+3. If you’re running for the first time, install the dependencies by running `npm ci` (or if you’re not lazy, run `npm clean-install`).
+4. Once the installation is over, start the app locally by running `npm start`.
+5. Hope everything works, check by opening http://localhost:5173/ on your browser (it might have already started your browser, kindly check).
+
+Here are all the commands...
+
+```bash
+$ git clone https://github.com/<Your-GitHub-Username>/GitHub-ReadMe.git
+$ npm i
+$ npm run dev
+```
+
+If `npm ci` gives issues on Windows or Linux machines, please use `npm i` (or if you’re not lazy, run `npm install`).
+
+If you’re facing any issues, feel free to message me on WhatsApp / LinkedIn / Twitter / Discord / Email (on the order of responsivenes, email being the slowest)! 😅
+
 
 <!-- FUTURE FEATURES -->
 
-## 🔭 Future Features <a name="future-features"></a>
+## Future Features
 
 > 💳Quick and Safe Payments: Soon, ordering food will be even easier with a magic button that lets you pay in a blink, and your account will be guarded by a super-smart lock with passwords and secret handshakes.
 
@@ -89,9 +115,8 @@
 <!-- - **[Payment Mode Integration]**
 - **[User Authentication]** -->
 
-
-## ⭐️ Show your support <a name="support"></a>
+## Show your support <a name="support"></a>
 
 > "If you enjoy this project, I'd greatly appreciate your support. Consider sharing it with others who might find it useful. Your contribution helps me grow and improve. 🚀, Don't Hesitate for starring this GitHub repoistory! "
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[⬆️ Back to Top](#table-of-contents)
