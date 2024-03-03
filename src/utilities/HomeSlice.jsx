@@ -64,7 +64,7 @@ const HomeSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    //(fetchData) case1
+    //(fetchData) case1 , for fetching banners, restaurant-chain data, restaurant data
     builder.addCase(fetchData.fulfilled, (state, action) => {
       const data = action.payload;
       state.status = "success";

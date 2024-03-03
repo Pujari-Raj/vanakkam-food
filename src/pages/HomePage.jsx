@@ -17,9 +17,11 @@ import { useDispatch, useSelector } from "react-redux";
 import MoreRestaurantsShimmer from "../components/MoreRestaurantsShimmer";
 
 const HomePage = () => {
+
+  // getting location, restaurant details from AppSlice, HomeSlice
   const dispatch = useDispatch();
-  const restchainCards = useSelector(selectRestChainCards);
   const userLocation = useSelector(selectLocationState);
+  const restchainCards = useSelector(selectRestChainCards);
   const restaurants = useSelector(selectRestCards);
   const status = useSelector(selectHomeStatus);
   const page = useSelector(selectPageNum);
@@ -30,11 +32,12 @@ const HomePage = () => {
   const [onlineRestaurants, setOnlineRestaurants] = useState(
     restchainCards.slice(0, 5)
   );
-  console.log("onlineRestaurants-length initially- ", onlineRestaurants.length);
+  // console.log("onlineRestaurants-length initially- ", onlineRestaurants.length);
   // console.log("onlineRestaurants->",restchainCards);
   const [index, setIndex] = useState(5);
   const [loadingShimmer, setLoadingShimmer] = useState(false);
 
+  // getting 5 more restaurants on each click 
   const getMoreRestaurants = () => {
     setLoadingShimmer(true);
     if (index < restchainCards.length) {
@@ -43,19 +46,16 @@ const HomePage = () => {
         setOnlineRestaurants(onlineRestaurants.concat(data));
         setIndex(index + 5);
         setLoadingShimmer(false);
-      }, 2000)
+      }, 2000);
       // console.log("getMoreRestaurants-data",data);
     }
   };
 
-  // console.log(
-  //   "index-length",
-  //   index
-  // );
   useEffect(() => {
     setOnlineRestaurants(restchainCards.slice(0, 5));
   }, [restchainCards]);
 
+  // if user's location is not available
   if (serviceStatus) {
     return (
       <div className="flex h-screen w-full flex-col items-center justify-start">
@@ -228,9 +228,7 @@ const HomePage = () => {
                 </Link>
               );
             })}
-            {loadingShimmer && (
-              <MoreRestaurantsShimmer/>
-            )}
+            {loadingShimmer && <MoreRestaurantsShimmer />}
             {status === "loading" && (
               <>
                 <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
@@ -273,7 +271,7 @@ const HomePage = () => {
             )}
           </div>
           <div className="my-10 flex justify-center">
-            {page <= 200 && index <restchainCards.length && (
+            {page <= 200 && index < restchainCards.length && (
               <button
                 className="mt-8  text-center uppercase h-10 w-auto rounded px-[20px] py-[8px] font-bold bg-orangeColor text-white hover:text-gray-600 hover:bg-transparent hover:border-grayColor hover:border-2 duration-75"
                 onClick={() => {
@@ -289,11 +287,9 @@ const HomePage = () => {
                   getMoreRestaurants();
                 }}
               >
-                Explore ({restchainCards.length - index}+ more) Restaurants 
+                Explore ({restchainCards.length - index}+ more) Restaurants
               </button>
-            )
-            
-            }
+            )}
           </div>
         </div>
       </div>

@@ -6,6 +6,9 @@ const useCurrentLocation = (dispatch, addLocation) => {
         maximumAge: 0,
     }
 
+    /**
+     * Used nominatim opensteetmap API for fetching address of user using latitude & longitude
+     */
     const success = async (position) => {
         const coordiantes = position.coords;
         const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${coordiantes.latitude}&lon=${coordiantes.longitude}&format=json`);

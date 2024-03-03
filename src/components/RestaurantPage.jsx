@@ -55,7 +55,7 @@ const RestaurantPage = () => {
               delFees: data?.info?.feeDetails?.totalFee,
             }}
           />
-          {/*  restaurantbotoom section  */}
+          {/* BrowseMenu-section  */}
           <RestaurantBrowseMenu data={data?.restList}/>
         </div>
       </div>

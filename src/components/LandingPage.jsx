@@ -7,6 +7,7 @@ import { addLocation } from "../utilities/AppSlice";
 import useCurrentLocation  from "../customhooks/useCurrentLocation";
 import useSearchLocation from "../customhooks/useSearchLocation";
 
+// custom debouncing function
 const debounce = (func, wait) => {
   let timeout;
   return (...args) => {
@@ -24,13 +25,18 @@ const LandingPage = () => {
   const searchRef = useRef(null);
   const [searchData, setSearchData] = useState([]);
 
+  // fetching user's location after getting search results on searching in search tag 
+  // and setting user's location
   const fetchAddressBySearch = async (placeid) => {
     const res = await fetch(`${FETCH_ADDRESS_URL}${placeid}`);
-    const {data} = await res.json();
+    const { data } = await res.json();
     console.log("FETCH_ADDRESS_URL-",data);
+    // setting city
     const city = data[0]?.address_components?.filter(
       (item) => item?.types[0] === "city"
     );
+
+    // setting lat, long, city, address and passing to add location using dispatch
     dispatch(
       addLocation({
         lat: data[0]?.geometry?.location?.lat,
@@ -43,6 +49,8 @@ const LandingPage = () => {
     
   }
 
+  // calling useseacrhlocation API with debouncing for get user location
+  // and passing searchQuery, setSearchData to(useSearchLocation) for fetching data
   const handleSearch = useCallback(
     debounce(
       (searchQuery) => useSearchLocation(searchQuery, setSearchData),
@@ -51,7 +59,7 @@ const LandingPage = () => {
     [],
   );
 
-  // console.log(searchData);
+  console.log(searchData);
   const [content, setContent] = useState("Unexpected guests?");
 
   useEffect(() => {
@@ -125,6 +133,7 @@ const LandingPage = () => {
                       autoFocus={true}
                       autoComplete="off"
                     />
+                    {/* btn, function for fetching current-location on click */}
                     <button
                       className="absolute right-0 top-[1px] mr-2 flex cursor-pointer items-center gap-x-1 bg-white px-2.5 py-3 font-medium text-[#535665] hover:bg-[#e9e9eb] md:top-2"
                     onClick={() => useCurrentLocation(dispatch, addLocation)}
@@ -137,10 +146,12 @@ const LandingPage = () => {
                     FIND FOOD
                   </button>
                 </form>
+                {/* After entering location in search input debouncing the search results */}
                 {searchData &&(
                  <div className="absolute top-[48px] z-[10] w-full  border border-t-0 border-solid border-[#d4d5d9] bg-white shadow-[0_1px_10px_0_rgba(40,44,63,0.1)] md:top-[60px]">
                  {searchData?.map((item) => {
                    return (
+                    // fetching address on click of search result and passing placeid to fetchAddressBySearch (function)
                      <button
                        key={item?.place_id}
                        className="group relative flex min-h-[40px] w-full cursor-pointer text-left font-normal text-[#535665]"

@@ -8,6 +8,7 @@ const AppSlice = createSlice({
     name: "appData",
     initialState,
     reducers:{
+        
         addLocation(state, action){
             state.userLocation = action.payload;
             localStorage.setItem("userLocation", JSON.stringify(state.userLocation));

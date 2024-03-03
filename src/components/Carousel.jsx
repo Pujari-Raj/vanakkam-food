@@ -11,6 +11,8 @@ import {
 
 const Carousel = () => {
   const { carouselCards, categoryCards } = useSelector(selectCarouselData);
+  console.log("carouselCards--",carouselCards);
+  console.log("categoryCards--",categoryCards);
   const status = useSelector(selectCarouselStatus);
   
   return (
@@ -91,10 +93,10 @@ const Carousel = () => {
               {carouselCards?.map((item) => {
                 return (
                   <div className="contents cursor-pointer" key={item?.imageId}>
-                    <img
+                    {/* <img
                       className="h-[200px] w-[300px] sm:h-[250px] sm:w-[425px]"
                       src={CAROUSEL_BANNER_URL + item?.imageId}
-                    />
+                    /> */}
                   </div>
                 );
               })}

@@ -6,9 +6,9 @@ const RestaurantBottomMenu = ({ data, open, toggle }) => {
   if (open) {
     menuNavClasses = "menu-drawer open";
     backdrop = <div className="backdrop" onClick={toggle}></div>;
-    document.body?.classList?.add("menuOpen");
+    // document.body?.classList?.add("menuOpen");
   } else if (!open && document.body?.classList?.contains("menuOpen")) {
-    document.body?.classList?.remove("menuOpen");
+    // document.body?.classList?.remove("menuOpen");
   }
 
   var allRestaurants = [];
