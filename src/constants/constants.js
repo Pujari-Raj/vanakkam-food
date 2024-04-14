@@ -1,6 +1,6 @@
 const env = import.meta.env.VITE_CORS_PROXY
 
-let PROXY_URL = env+"/api/proxy/swiggy/dapi/";
+let PROXY_URL = env+"api/proxy/swiggy/dapi/";
 
 export const LOGIN_ICON_URL =
   "https://foodsimp.netlify.app/loginDrawerIcon.fe3b839f.png";

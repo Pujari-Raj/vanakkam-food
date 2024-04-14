@@ -11,8 +11,8 @@ import {
 
 const Carousel = () => {
   const { carouselCards, categoryCards } = useSelector(selectCarouselData);
-  console.log("carouselCards--",carouselCards);
-  console.log("categoryCards--",categoryCards);
+  // console.log("carouselCards--",carouselCards);
+  // console.log("categoryCards--",categoryCards);
   const status = useSelector(selectCarouselStatus);
   
   return (
