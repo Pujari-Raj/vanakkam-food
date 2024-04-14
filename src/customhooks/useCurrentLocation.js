@@ -7,7 +7,7 @@ const useCurrentLocation = (dispatch, addLocation) => {
     }
 
     /**
-     * Used nominatim opensteetmap API for fetching address of user using latitude & longitude
+     * Used nominatim opensteetmap API for fetching address of user using latitude & longitude (https://medium.com/@adri.espejo/getting-started-with-openstreetmap-nominatim-api-e0da5a95fc8a) 
      */
     const success = async (position) => {
         const coordiantes = position.coords;

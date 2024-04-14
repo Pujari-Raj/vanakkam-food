@@ -39,6 +39,9 @@ const RestaurantPage = () => {
     };
   }, []);
 
+  // console.log("fetch menu data-",data?.info?.name);
+  console.log('data-', data);
+  
   return data?.info ? (
     <>
       <div className="mx-auto my-2 flex min-h-[800px] max-w-[800px] flex-col md:my-5 md:px-4">

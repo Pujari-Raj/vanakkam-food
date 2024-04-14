@@ -13,8 +13,7 @@ const RestaurantInfo = ({ data }) => {
     distance: info?.sla?.lastMileTravelString,
     delFees: info?.feeDetails?.totalFee,
   };
-  // console.log("offers-data "+info);
-
+  
   return (
     <div>
       <div className="flex h-10 items-center justify-between pt-2 text-[11px] text-[#93959f]">
@@ -50,7 +49,8 @@ const RestaurantInfo = ({ data }) => {
           </p>
           <div className="mt-3 text-sm text-[#7e808c] flex items-center justify-center">
           <Bike className="mr-2 h-[1.15rem] w-[1.15rem] text-[#3d4152]  font-bold" />
-            {info?.feeDetails?.message}
+            {/* {info?.feeDetails?.message} */}
+            <span dangerouslySetInnerHTML={{ __html: info?.feeDetails?.message }} />
           </div>
         </div>
         <div className="">

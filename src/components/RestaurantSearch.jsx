@@ -38,9 +38,6 @@ const RestaurantSearch = () => {
         restaurant?.info?.name?.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
-    // if (searchData == "") {
-    //     filterData = []
-    // }
     if (searchQuery == "") filterData = [];
     return filterData;
   }
