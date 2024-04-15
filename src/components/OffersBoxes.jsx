@@ -4,9 +4,9 @@ import { SM_OFFER_ICON_URL } from "../constants/constants";
 const OffersBoxes = ({item}) => {
   return (
     <div className='mr-3'>
-        <div className="flex h-full min-w-[200px] cursor-pointer items-center rounded-lg border border-[#e9e9eb] p-2 text-left shadow-[0_1px_2px_#0000000a]">
+        <div className="flex h-full min-w-[200px] cursor-pointer items-center rounded-lg border border-[#e9e9eb] px-[25px] py-2.5 text-left shadow-[0_1px_2px_#0000000a]">
         {item?.info?.offerTag && (
-          <div className="flatDeals rotate-180 border-l border-solid border-l-[#e9e9eb] pl-1 text-center text-[9px] font-bold text-[#e46d47]">
+          <div className="flatDeals border-l border-solid border-l-[#e9e9eb] pl-1 text-center text-[9px] font-bold text-[#e46d47]">
             <span>{item?.info?.offerTag}</span>
           </div>
         )}

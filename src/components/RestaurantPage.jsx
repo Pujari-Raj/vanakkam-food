@@ -40,7 +40,7 @@ const RestaurantPage = () => {
   }, []);
 
   // console.log("fetch menu data-",data?.info?.name);
-  console.log('data-', data);
+  // console.log('data-', data);
   
   return data?.info ? (
     <>

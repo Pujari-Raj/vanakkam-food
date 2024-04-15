@@ -5,6 +5,7 @@ import OffersBoxes from "./OffersBoxes";
 
 const RestaurantInfo = ({ data }) => {
   const { info, offers, restList } = data;
+  console.log('offers',offers);
   const restInfo = {
     name: info?.name,
     areaName: info?.areaName,
@@ -80,10 +81,16 @@ const RestaurantInfo = ({ data }) => {
           {info?.orderabilityCommunication?.message?.text}
         </div>
       )}
-      <div className="offerContainer mx-2 my-0 flex overflow-y-hidden overflow-x-scroll bg-red-500">
+      <div className="mx-4 my-0 ">
+        <div className="">
+        <p className="mb-2 text-[1.2rem] font-bold">Deals for you</p>
+        </div>
+        <div className="offerContainer flex overflow-y-hidden overflow-x-scroll">
         {offers?.map((item) => {
-          return <OffersBoxes item={item} key={item?.info?.offerIds[2]} />;
+          return <OffersBoxes item={item} key={item?.info?.offerIds[0]} />;
         })}
+
+        </div>
       </div>
     </div>
   );
