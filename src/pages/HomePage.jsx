@@ -25,34 +25,11 @@ const HomePage = () => {
   const status = useSelector(selectHomeStatus);
   const page = useSelector(selectPageNum);
   const serviceStatus = useSelector(selectAvailStatus);
+  const [loadingShimmer, setLoadingShimmer] = useState(false);
   // console.log(restaurants);  // 9 rest
   // console.log(restchainCards); // 20 rest
 
-  const [onlineRestaurants, setOnlineRestaurants] = useState(
-    restchainCards.slice(0, 5)
-  );
-
-  // console.log("onlineRestaurants-length initially- ", onlineRestaurants.length);
-  // console.log("onlineRestaurants->",restchainCards);
-  const [index, setIndex] = useState(5);
-  const [loadingShimmer, setLoadingShimmer] = useState(false);
-
-  // getting 5 more restaurants on each click
-  const getMoreRestaurants = () => {
-    setLoadingShimmer(true);
-    if (index < restchainCards.length) {
-      setTimeout(() => {
-        var data = restchainCards.slice(index, index + 5);
-        setOnlineRestaurants(onlineRestaurants.concat(data));
-        setIndex(index + 5);
-        setLoadingShimmer(false);
-      }, 2000);
-      // console.log("getMoreRestaurants-data",data);
-    }
-  };
-
   useEffect(() => {
-    setOnlineRestaurants(restchainCards.slice(0, 5));
   }, [restchainCards]);
 
   // if user's location is not available
@@ -78,6 +55,7 @@ const HomePage = () => {
     <>
       <div className=" mx-auto w-full max-w-[1200px]">
         <Carousel />
+        {/* Restaurant-chain cards */}
         {restchainCards && restchainCards?.length != 0 && (
           <>
             <div className="hidden md:block px-4 w-full">
@@ -151,7 +129,7 @@ const HomePage = () => {
                 className="carouselContainer my-6 py-4 flex gap-8 overflow-x-auto"
                 id="slider-3"
               >
-                {/* 9-rest  */}
+                {/* chains-restaurant(20)  */}
                 {restchainCards?.map((item) => {
                   return (
                     <Link
@@ -216,83 +194,71 @@ const HomePage = () => {
             </div>
           </>
         )}
-        {/*  */}
+        {/* Online-Restaurant-(9) */}
         <div className="px-4">
-          {
-            restaurants && restaurants?.length != 0 && (
-              <>
-              </>
-            )
-          }
-          <h1 className="text-2xl font-bold text-black">
-            {`Restaurants with online food delivery in ${userLocation?.city}`}
-          </h1>
-          <div
-            className="my-8 grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-x-8 gap-y-4 md:grid-cols-[repeat(3,1fr)] lg:grid-cols-[repeat(4,1fr)]
-          "
-          >
-            {/* 20-rest */}
-            {restaurants?.map((item) => {
-              return (
-                <Link to={"restaurant/" + item?.info?.id} key={item?.info?.id}>
-                  <RestaurantCards item={item} />
-                </Link>
-              );
-            })}
-            {loadingShimmer && <MoreRestaurantsShimmer />}
-            {status === "loading" && (
-              <>
-                <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
-                  <div className="rest_img shine  h-[55%]"></div>
-
-                  <div className="rest_info_card h-1/4">
-                    <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
-                    <div className=" wrapper_shimmer content-line"></div>
-                    <div className=" wrapper_shimmer content-line"></div>
-                  </div>
-                </div>
-                <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
-                  <div className="rest_img shine  h-[55%]"></div>
-
-                  <div className="rest_info_card h-1/4">
-                    <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
-                    <div className=" wrapper_shimmer content-line"></div>
-                    <div className=" wrapper_shimmer content-line"></div>
-                  </div>
-                </div>
-                <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
-                  <div className="rest_img shine  h-[55%]"></div>
-
-                  <div className="rest_info_card h-1/4">
-                    <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
-                    <div className=" wrapper_shimmer content-line"></div>
-                    <div className=" wrapper_shimmer content-line"></div>
-                  </div>
-                </div>
-                <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
-                  <div className="rest_img shine  h-[55%]"></div>
-
-                  <div className="rest_info_card h-1/4">
-                    <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
-                    <div className=" wrapper_shimmer content-line"></div>
-                    <div className=" wrapper_shimmer content-line"></div>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
-          {/* <div className="my-10 flex justify-center">
-            {page <= 200 && index < restchainCards.length && (
-              <button
-                className="mt-8  text-center uppercase h-10 w-auto rounded px-[20px] py-[8px] font-bold bg-orangeColor text-white hover:text-gray-600 hover:bg-transparent hover:border-grayColor hover:border-2 duration-75"
-                onClick={() => {
-                  getMoreRestaurants();
-                }}
+          {restaurants && restaurants?.length != 0 && (
+            <>
+              <h1 className="text-2xl font-bold text-black">
+                {`Restaurants with online food delivery in ${userLocation?.city}`}
+              </h1>
+              <div
+                className="my-8 grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-x-8 gap-y-4 sm:grid-cols-[repeat(2,1fr)] md:grid-cols-[repeat(3,1fr)] lg:grid-cols-[repeat(4,1fr)] "
               >
-                Explore ({restchainCards.length - index}+ more) Restaurants
-              </button>
-            )}
-          </div> */}
+                {/* online-rest(9) */}
+                {restaurants?.map((item) => {
+                  return (
+                    <Link
+                      to={"restaurant/" + item?.info?.id}
+                      key={item?.info?.id}
+                    >
+                      <RestaurantCards item={item} />
+                    </Link>
+                  );
+                })}
+                {loadingShimmer && <MoreRestaurantsShimmer />}
+                {status === "loading" && (
+                  <>
+                    <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
+                      <div className="rest_img shine h-[55%]"></div>
+
+                      <div className="rest_info_card h-1/4">
+                        <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
+                        <div className=" wrapper_shimmer content-line"></div>
+                        <div className=" wrapper_shimmer content-line"></div>
+                      </div>
+                    </div>
+                    <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
+                      <div className="rest_img shine  h-[55%]"></div>
+
+                      <div className="rest_info_card h-1/4">
+                        <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
+                        <div className=" wrapper_shimmer content-line"></div>
+                        <div className=" wrapper_shimmer content-line"></div>
+                      </div>
+                    </div>
+                    <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
+                      <div className="rest_img shine  h-[55%]"></div>
+
+                      <div className="rest_info_card h-1/4">
+                        <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
+                        <div className=" wrapper_shimmer content-line"></div>
+                        <div className=" wrapper_shimmer content-line"></div>
+                      </div>
+                    </div>
+                    <div className="container-card_shimmer1 shine min-w-[150px] h-[280px] rounded-2xl ">
+                      <div className="rest_img shine  h-[55%]"></div>
+
+                      <div className="rest_info_card h-1/4">
+                        <p className="name_of_hotel_shimmer wrapper_shimmer"></p>
+                        <div className=" wrapper_shimmer content-line"></div>
+                        <div className=" wrapper_shimmer content-line"></div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>

@@ -38,7 +38,9 @@ const CartPage = () => {
       <div className="cartContainer">
         {cartItems?.length === 0 ? (
           <div className="cartInnerContainer">
-            <div className="cartBGImage"></div>
+            <div className="cartBGImage">
+              <img src="/assets/empty-cart.webp" alt="empty-cart-image" />
+            </div>
             <div className="cartMsg">Your cart is empty</div>
             <div className="cartDesc">
               You can go to home page to view more restaurants
