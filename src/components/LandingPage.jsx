@@ -16,7 +16,7 @@ const debounce = (func, wait) => {
       func(...args)
     }, wait);
   };
-};
+}
 
 const LandingPage = () => {
 
@@ -46,11 +46,12 @@ const LandingPage = () => {
       })
     );
     window.location.reload();
-    
   }
 
   // calling useseacrhlocation API with debouncing for get user location
   // and passing searchQuery, setSearchData to(useSearchLocation) for fetching data
+  // debounce (func, delay) {...}, we are passing 
+  //debounce((searchQuery) => useSearchLocation(searchQuery, setSearchData), 500) {... }
   const handleSearch = useCallback(
     debounce(
       (searchQuery) => useSearchLocation(searchQuery, setSearchData),
@@ -62,6 +63,7 @@ const LandingPage = () => {
   console.log(searchData);
   const [content, setContent] = useState("Unexpected guests?");
 
+  // function for showing random phrases
   useEffect(() => {
     const intervalId = setInterval(() => {
       const contentOptions = [
@@ -195,7 +197,7 @@ const LandingPage = () => {
           w-0 md:w-[0%] lg:w-[42%] xl:w-[43.6%]"
         ></div>
       </section>
-      {/*  */}
+      {/* Banners-section */}
       <section className="flex h-full w-full flex-col justify-between bg-[#2b1e16] px-16 pb-16 text-white md:flex-row">
         <div className="text-center">
           <div className="">

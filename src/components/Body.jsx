@@ -12,9 +12,11 @@ const Body = () => {
 
   const [locationDrawer, setLocationDrawer] = useState(false);
   const [signinDrawer, setSigninDrawer] = useState(false);
+  // using callback functions for toogling  to avoid  unnecessary re-renders.
   const toggleOne = useCallback(() => {
     setLocationDrawer(!locationDrawer);
   }, [locationDrawer]);
+
   const toggleTwo = useCallback(() => {
     setSigninDrawer(!signinDrawer);
   }, [signinDrawer]);
