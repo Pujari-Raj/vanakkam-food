@@ -51,12 +51,14 @@ const LocationDrawer = ({ open, toggle }) => {
   if (open) {
     drawerClass =
       "h-full w-full lg:w-[562px] z-[1001] bg-white transition-transform duration-[0.3s] ease-[ease-out] fixed left-0 top-0 translate-x-0 shadow-[1px_0_7px_#00000080]";
+      
     backdrop = (
       <div
         className="fixed right-0 top-0 z-[1000] h-full w-full bg-[#282c3e99]"
         onClick={toggle}
       ></div>
     );
+    
     document?.body?.classList?.add("drawerOpenTwo");
   } else if (!open && document?.body?.classList?.contains("drawerOpenTwo")) {
     document?.body?.classList?.remove("drawerOpenTwo");

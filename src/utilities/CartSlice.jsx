@@ -22,6 +22,7 @@ const CartSlice = createSlice({
         } else {
           state.restInfo = restInfo;
         }
+        
         const item = state.items.find((item) => item?.id === cartItem?.id);
         if (item) {
           item.qty = item?.qty + 1;
